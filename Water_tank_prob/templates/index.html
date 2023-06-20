@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Water Tank Problem</title>
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    h1, h2 {
+      text-align: center;
+    }
+
+    #svg-container {
+      margin-top: 20px;
+      transform: scaleX(-1);
+    }
+
+    svg {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      align-items: flex-start;
+    }
+
+    rect {
+      margin: 5px;
+    }
+
+    .block-letter {
+      display: inline-block;
+      font-size: 24px;
+      padding: 5px;
+      background-color: lightgray;
+      margin-right: 5px;
+    }
+  </style>
+</head>
+<body>
+  <h1>SVG Table Example</h1>
+  <form method="post" action="/">
+    <label for="numbers">Enter numbers (comma-separated):</label><br>
+    <input type="text" name="numbers" id="numbers" value="{{ numbers }}" required><br>
+    <input type="submit" value="Generate">
+  </form>
+  <div id="svg-container">
+    {% if svg %}
+      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
+        {{ svg | safe }}
+      </svg>
+    {% endif %}
+  </div>
+  {% if output is not none %}
+    <h2>Output:</h2>
+    <div id="output-container">
+      <span class="block-letter">Output is {{ output }}</span>
+    </div>
+  {% endif %}
+</body>
+</html>
