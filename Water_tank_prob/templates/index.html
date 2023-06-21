@@ -10,6 +10,7 @@
       justify-content: center;
       height: 100vh;
       margin: 0;
+      font-family: Arial, sans-serif;
     }
 
     h1, h2 {
@@ -17,8 +18,7 @@
     }
 
     #svg-container {
-      margin-top: 20px;
-      transform: scaleX(-1);
+      margin-top: 40px;
     }
 
     svg {
@@ -30,22 +30,56 @@
     }
 
     rect {
-      margin: 5px;
+      margin: 10px;
     }
 
     .block-letter {
       display: inline-block;
-      font-size: 24px;
-      padding: 5px;
+      font-size: 32px;
+      padding: 10px;
       background-color: lightgray;
-      margin-right: 5px;
+      margin-right: 10px;
+    }
+
+    label {
+      font-size: 20px;
+    }
+
+    input[type="text"] {
+      font-size: 18px;
+      padding: 5px;
+      width: 300px;
+      margin-bottom: 10px;
+    }
+
+    input[type="submit"] {
+      font-size: 20px;
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #45a049;
+    }
+
+    #output-container {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    #output-container .block-letter {
+      font-size: 24px;
+      padding: 10px;
     }
   </style>
 </head>
 <body>
-  <h1>SVG Table Example</h1>
+  <h1>Amount of Water Trapped</h1>
   <form method="post" action="/">
-    <label for="numbers">Enter numbers (comma-separated):</label><br>
+    <label for="numbers">Enter numbers (comma-separated in a list):</label><br>
     <input type="text" name="numbers" id="numbers" value="{{ numbers }}" required><br>
     <input type="submit" value="Generate">
   </form>
